@@ -1,3 +1,4 @@
+import React from 'react'
 import { Button, Flex, Heading, Text, VStack } from '@chakra-ui/react'
 
 export const Hero = ({ title }: { title: string }) => (
@@ -12,7 +13,7 @@ export const Hero = ({ title }: { title: string }) => (
       p={40}
       justifyContent="center"
       alignItems="center"
-      >
+    >
       <Heading fontSize="3vw">{title}</Heading>
       <Text fontSize={'md'}>
         Já realizado em Campo Grande, com sucesso absoluto, esgotamento de vagas
@@ -21,7 +22,7 @@ export const Hero = ({ title }: { title: string }) => (
         da NEUROCIÊNCIA jamais aplicados à dialética judiciária. Presencialmente em Campo Grande, MS
         dias 15 e 16 de setembro.
       </Text>
-      <Button >Quero me inscrever agora</Button>
+      <Button >Quero me inscrever</Button>
     </VStack>
   </Flex>
 )
