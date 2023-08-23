@@ -1,22 +1,34 @@
 import React from 'react'
 import useCountDownHook from '../hook/useCountDownHook';
 import { Counter } from './Counter';
-import { Text, HStack, Flex, Image, Button, Box } from '@chakra-ui/react';
+import { Text, HStack, Flex, Image, Button, Box, useMediaQuery } from '@chakra-ui/react';
 import logoDouglas from '../assets/logoDouglas.png'
 
 
 export const Footer = () => {
   const [day, hour, minute, second] = useCountDownHook("Sep 15, 2023 00:00:00");
 
+  const [isWide] = useMediaQuery('(min-width: 1170px)');
+
+
   return (
-    <Flex w={'100%'} h={'150px'} bgColor={'white'} alignItems={'center'} justifyContent={'space-between'} px={100} gap={'1rem'}>
+    <Flex
+      w={'100%'}
+      h={'auto'}
+      bgColor={'white'}
+      px={isWide ? 100 : 10}
+      py={10}
+      alignItems={'center'}
+      flexDir={isWide ? 'row' : 'column'}
+      gap={10}
+      justifyContent={isWide? 'center' : 'space-between'}>
       <Image src={logoDouglas.src} w='250px' alt="Logo Douglas OLdergardo" />
-      <HStack >
-          <Counter title="Dias" number={day} bg="#9B0A0F" colorLetter="white" />
-          <Counter title="Horas" number={hour} bg="#9B0A0F" colorLetter="white" />
-          <Counter title="Minutos" number={minute} bg="#9B0A0F" colorLetter="white" />
-          <Counter title="Segundos" number={second} bg="#9B0A0F" colorLetter="white" />
-      </HStack>
+      <Flex flexDir={{ base: 'column', md: 'row', lg: 'row'}} gap={5} >
+        <Counter title="Dias" number={day} bg="#9B0A0F" colorLetter="white" />
+        <Counter title="Horas" number={hour} bg="#9B0A0F" colorLetter="white" />
+        <Counter title="Minutos" number={minute} bg="#9B0A0F" colorLetter="white" />
+        <Counter title="Segundos" number={second} bg="#9B0A0F" colorLetter="white" />
+      </Flex>
 
       <Button size={'lg'}>Quero me inscrever</Button>
     </Flex>

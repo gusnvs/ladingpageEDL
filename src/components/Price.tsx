@@ -1,4 +1,4 @@
-import { Flex, HStack, Heading, Text, Badge, Link, Button, Box, Divider } from '@chakra-ui/react'
+import { Flex, HStack, Heading, Text, Badge, Link, Button, Box, Divider, useMediaQuery } from '@chakra-ui/react'
 import React from 'react'
 import { Counter } from './Counter';
 import useCountDownHook from '../hook/useCountDownHook';
@@ -7,6 +7,8 @@ import { motion } from 'framer-motion';
 export const Price = () => {
 
   const [day, hour, minute, second] = useCountDownHook("Sep 15, 2023 00:00:00");
+
+  const [isWide] = useMediaQuery('(min-width: 1170px)');
 
   const lotes = [
     {
@@ -37,27 +39,36 @@ export const Price = () => {
   ];
 
   return (
-    <Flex w={'100%'} h={'100vh'} bgColor={'white'} alignItems={'center'} justifyContent={'center'} px={100} >
+    <Flex
+      w={'100%'}
+      h={'auto'}
+      bgColor={'white'}
+      alignItems={'center'}
+      justifyContent={'center'}
+      px={isWide ? 100 : 5}
+      py={10} >
       <Flex
         w={'100%'}
-        h={'90%'}
+        h={'auto'}
         bgColor={'#1B1815'}
         borderRadius={'25px'}
         alignItems={'center'}
         justifyContent={'center'}
         flexDir={'column'}
-        gap={10}>
+        gap={10}
+        px={isWide ? 100 : 10}
+        py={10}>
         <Heading color={'white'} textAlign={'center'} fontSize={'xl'}>
           Como dizia Epicuro, <Text color={'#ED1D24'}>"Metade do sucesso vem do acaso. Metade do esforço pessoal."</Text> portanto, invista no seu conhecimento pessoal.
         </Heading>
-        <Text color={'white'}>O evento começa exatamente em:</Text>
-        <HStack >
+        <Text textAlign={'center'} color={'white'}>O evento começa exatamente em:</Text>
+        <Flex flexDir={{ base: 'column', md: 'row', lg: 'row'}} gap={5}>
           <Counter title="Dias" number={day} bg="white" colorLetter="#9B0A0F" />
           <Counter title="Horas" number={hour} bg="white" colorLetter="#9B0A0F" />
           <Counter title="Minutos" number={minute} bg="white" colorLetter="#9B0A0F" />
           <Counter title="Segundos" number={second} bg="white" colorLetter="#9B0A0F" />
-        </HStack>
-        <Text color={'white'}>Confira os lotes e faça sua inscrição antecipada</Text>
+        </Flex>
+        <Text textAlign={'center'} color={'white'}>Confira os lotes e faça sua inscrição antecipada</Text>
         <Box w={'100%'} maxWidth={'900px'} >
           <motion.div whileTap={{ cursor: "grabbing" }} style={{
             cursor: 'grab',
@@ -91,7 +102,7 @@ export const Price = () => {
             </motion.div>
           </motion.div>
         </Box>
-        <Text color={'white'} w={'50%'} textAlign={'center'}>
+        <Text color={'white'} w={'100%'} textAlign={'center'}>
           Alunos do Curso Online Oratória Jurídica 3.0 tem desconto de 45%. Façam contato
           inbox pelo perfil Instagram <Link href='https://www.instagram.com/direct/t/112073226852259'><Badge colorScheme='red'>@oldegardo</Badge></Link> para obter o seu cupom.
         </Text>
