@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Flex, Heading, Image, VStack, Text, Box } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import celular from '../assets/celular.jpg'
@@ -10,8 +10,9 @@ import image4 from '../assets/image4.jpg'
 const image = [image1, image2, image3, image4]
 
 export const Testimony = () => {
+
     return (
-        <Flex w={'100%'} h={'100vh'} alignItems={'center'} justifyContent={'space-between'} px={100} >
+        <Flex w={'100%'} h={'80vh'} alignItems={'center'} justifyContent={'space-between'} px={100} >
             <Image src={celular.src} w='450px' alt="Turma EDL" />
             <Flex w={'50%'} flexDir={'column'} alignItems={'flex-end'} gap={10}>
                 <Heading textAlign="right" >
@@ -19,11 +20,11 @@ export const Testimony = () => {
                     anterior?
                 </Heading>
                 <Box w={'100%'} maxWidth={'900px'} >
-                    <motion.div style={{
+                    <motion.div whileTap={{ cursor: "grabbing" }} style={{
                         cursor: 'grab',
                         overflow: 'hidden'
                     }}>
-                        <motion.div style={{
+                        <motion.div drag="x" dragConstraints={{ right: 0, left: -1000 }} style={{
                             display: 'flex',
                         }}>
                             {image.map(image => (

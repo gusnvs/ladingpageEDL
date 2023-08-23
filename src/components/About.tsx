@@ -1,7 +1,21 @@
-import { Flex, Heading, VStack, Text, Image } from '@chakra-ui/react'
-import React from 'react'
+import { Flex, Heading, VStack, Text, Image, Box } from '@chakra-ui/react'
+import React, { useState } from 'react'
+import douglas from '../assets/douglas.webp'
+import Head from 'next/head';
+
 
 export const About = () => {
+
+    const [hovered, setHovered] = useState(false);
+
+    const handleMouseEnter = () => {
+        setHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setHovered(false);
+    };
+
     return (
         <Flex
             w={'100%'}
@@ -10,7 +24,13 @@ export const About = () => {
             px={100}
             alignItems={'center'}
             justifyContent={'space-between'}>
-            <VStack gap={10} alignItems={'flex-start'} w={'50%'} >
+            <Head>
+                <link
+                    href="https://db.onlinewebfonts.com/c/07cb29fdcb073fff840edc6de2067b50?family=Amsterdam+Four_ttf"
+                    rel="stylesheet"
+                />
+            </Head>
+            <VStack gap={10} alignItems={'flex-start'} w={'50%'} p={5} >
                 <Heading color={'white'}>Conheça o seu mentor:</Heading>
                 <Text fontWeight={'bold'} fontSize={'xl'} color={'#ED1D24'}>Douglas Oldegardo,</Text>
                 <Text color={'white'}>
@@ -22,8 +42,42 @@ export const About = () => {
                     Instrutor de Retórica, Oratória e Plenário do Júri. Palestrante e ministrador de cursos sobre Oratória, Júri e Segurança Pública em diversos estados da Federação.
                 </Text>
             </VStack>
-            <Image />
+            <Flex w={'50%'} justifyContent={'center'} p={10} position="relative">
+                <Image
+                    src={douglas.src}
+                    w={'500px'}
+                    h={'600px'}
+                    objectFit={'cover'}
+                    // objectPosition={'-200px center'}
+                    borderRadius={'35px'}
+                    border={'solid 5px #7F0C0B'}
+                    boxShadow={'md'}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    style={{
+                        transform: hovered ? 'scale(1.05)' : 'scale(1)',
+                        transition: 'transform 0.6s ease-in-out',
+                    }}
+                />
+                <Text
+                    zIndex={1000}
+                    position={'absolute'}
+                    color={'white'}
+                    bottom={'20px'}
+                    right={'80px'}
+                    fontSize={'30px'}
+                    fontFamily={'Amsterdam Four_ttf, sans-serif'}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    style={{
+                        transform: hovered ? 'scale(1.05)' : 'scale(1)',
+                        transition: 'transform 0.6s ease-in-out',
+                    }}
+                >
+                    Douglas Oldegardo
+                </Text>
 
+            </Flex>
         </Flex>
     )
 }

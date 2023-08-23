@@ -6,6 +6,8 @@ import { Info } from '../components/Info'
 import { Testimony } from '../components/Testimony'
 import { Price } from '../components/Price'
 import { About } from '../components/About'
+import { Footer } from '../components/Footer'
+import { Qualifications } from '../components/Qualifications'
 
 const Index = () => {
   return (
@@ -18,6 +20,7 @@ const Index = () => {
       <Testimony />
       <Price />
       <About />
+      <Footer />
     </>
   )
 }

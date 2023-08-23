@@ -1,4 +1,5 @@
 import { extendTheme } from '@chakra-ui/react'
+import { ButtonStyles } from './components/ButtonStyles'
 
 const fonts = { mono: `'Menlo', monospace` }
 
@@ -33,7 +34,9 @@ const theme = extendTheme({
     black: '#16161D',
   },
   fonts,
-  breakpoints,
+  components: {
+    Button: ButtonStyles
+  }
 })
 
 export default theme
