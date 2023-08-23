@@ -4,6 +4,7 @@ import { Counter } from './Counter';
 import { Text, HStack, Flex, Image, Button, Box } from '@chakra-ui/react';
 import logoDouglas from '../assets/logoDouglas.png'
 
+
 export const Footer = () => {
   const [day, hour, minute, second] = useCountDownHook("Sep 15, 2023 00:00:00");
 
@@ -16,7 +17,8 @@ export const Footer = () => {
           <Counter title="Minutos" number={minute} bg="#9B0A0F" colorLetter="white" />
           <Counter title="Segundos" number={second} bg="#9B0A0F" colorLetter="white" />
       </HStack>
-      <Button>Quero me inscrever</Button>
+
+      <Button size={'lg'}>Quero me inscrever</Button>
     </Flex>
   )
 }

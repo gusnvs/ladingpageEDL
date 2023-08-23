@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Flex, Heading, HStack, Text } from '@chakra-ui/react';
+import { Flex, Heading, HStack, Text, useMediaQuery  } from '@chakra-ui/react';
 import { RiUserVoiceFill } from "react-icons/ri";
 import { AiFillFire } from "react-icons/ai";
 import { BsBookmarkStarFill } from "react-icons/bs";
@@ -7,6 +7,9 @@ import { Typewriter } from 'react-simple-typewriter'
 
 export const Info = () => {
     const [hoveredIndex, setHoveredIndex] = useState(null);
+
+    const [isWide] = useMediaQuery('(min-width: 1170px)');
+
 
     const handleMouseEnter = (index) => {
         setHoveredIndex(index);
@@ -35,16 +38,18 @@ export const Info = () => {
     return (
         <Flex
             w={'100%'}
-            h={'300px'}
+            h={'auto'}
             bgGradient="linear(to-l, #390002,  #CC1915)"
-            px={100}
+            px={isWide ? 100 : 10}
+            py={10}
+            gap={10}
             alignItems={'center'}
-            flexDir={'row'}
+            direction={isWide ? 'row' : 'column'}
             justifyContent={'space-between'}>
-            <Heading>
+            <Heading textAlign={isWide ? 'start' : 'center'} >
                 Este evento é
                 <Heading color={'white'}>
-                <Typewriter
+                    <Typewriter
                         words={['obriatório', 'essencial', 'indispensável']}
                         loop={false}
                         cursor
@@ -53,14 +58,14 @@ export const Info = () => {
                         deleteSpeed={50}
                         delaySpeed={1000} />
                 </Heading>
-                para quem ..
+                para quem ...
             </Heading>
-            <HStack gap={10}>
+            <Flex gap={10} flexDir={{ base: 'column', md: 'row', lg: 'row'}} >
                 {items.map((item, index) => (
                     <Flex
                         key={index}
-                        w={'250px'}
-                        h={'200px'}
+                        w={'200px'}
+                        h={'150px'}
                         bgColor={hoveredIndex === index ? 'white' : '#390002'}
                         p={5}
                         color={hoveredIndex === index ? '#CC1915' : 'white'}
@@ -74,7 +79,7 @@ export const Info = () => {
                         {hoveredIndex === index ? <Text fontWeight={'semibold'}>{item.text}</Text> : item.icon}
                     </Flex>
                 ))}
-            </HStack>
+            </Flex>
         </Flex>
     );
 };

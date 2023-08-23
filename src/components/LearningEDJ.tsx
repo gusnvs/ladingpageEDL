@@ -15,7 +15,7 @@ import {
 
 export const LearningEDJ = () => {
   return (
-    <Flex w={'100%'} h={'50vh'} bgColor={'#1B1815'} alignItems={'center'} justifyContent={'space-between'} px={100}>
+    <Flex w={'100%'} h={'auto'} bgColor={'#1B1815'} alignItems={'center'} justifyContent={'space-between'} px={100}>
       <VStack w={'50%'} display={'flex'} alignItems={'flex-start'} gap={10}>
         <Box >
           <Heading mb={2} color={'white'}>O que você vai aprender no <Text color={'#ED1D24'}>EDJ 2.0?</Text></Heading>
