@@ -1,25 +1,14 @@
 import React, { useState } from 'react';
-import { Flex, Heading, HStack, Text, useMediaQuery  } from '@chakra-ui/react';
+import { Box, Flex, Heading, HStack, Text, useMediaQuery } from '@chakra-ui/react';
 import { RiUserVoiceFill } from "react-icons/ri";
 import { AiFillFire } from "react-icons/ai";
 import { BsBookmarkStarFill } from "react-icons/bs";
-// import { Typewriter } from 'react-simple-typewriter'
+import Typewriter from 'typewriter-effect';
 
-export const Info = () => {
-    const [hoveredIndex, setHoveredIndex] = useState(null);
+export const Information = () => {
 
     const [isWide] = useMediaQuery('(min-width: 1170px)');
-
-
-    const handleMouseEnter = (index) => {
-        setHoveredIndex(index);
-    };
-
-    const handleMouseLeave = () => {
-        setHoveredIndex(null);
-    };
-
-    
+    const [hoveredIndex, setHoveredIndex] = useState(null);
 
 
     const items = [
@@ -37,6 +26,14 @@ export const Info = () => {
         },
     ];
 
+    const handleMouseEnter = (index) => {
+        setHoveredIndex(index);
+    };
+
+    const handleMouseLeave = () => {
+        setHoveredIndex(null);
+    };
+
     return (
         <Flex
             w={'100%'}
@@ -48,23 +45,22 @@ export const Info = () => {
             alignItems={'center'}
             direction={isWide ? 'row' : 'column'}
             justifyContent={'space-between'}>
-            <Heading textAlign={isWide ? 'start' : 'center'} >
-                Este evento é
+            <Box textAlign={isWide ? 'start' : 'center'}>
+                <Heading >Este evento é</Heading>
+                {/* <Heading color={'white'}>obrigatório</Heading> */}
                 <Heading color={'white'}>
-                    {/* <Typewriter
-                        words={['obriatório', 'essencial', 'indispensável']}
-                        loop={false}
-                        cursor
-                        cursorStyle='|'
-                        typeSpeed={70}
-                        deleteSpeed={50}
-                        delaySpeed={1000} />
-                        <span id="typewriter-container" /> */}
-                        
+                    <Typewriter
+                        options={{
+                            strings: ['obriatório', 'essencial', 'indispensável'],
+                            autoStart: true,
+                            loop: true,
+                        }}
+                    />
                 </Heading>
-                para quem ...
-            </Heading>
-            <Flex gap={10} flexDir={{ base: 'column', md: 'row', lg: 'row'}} >
+                <Heading >para quem ...</Heading>
+            </Box>
+
+            <Flex gap={10} flexDir={{ base: 'column', md: 'row', lg: 'row' }} >
                 {items.map((item, index) => (
                     <Flex
                         key={index}

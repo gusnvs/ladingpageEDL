@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Flex, Heading, Text, VStack, Box, Image, useMediaQuery } from '@chakra-ui/react';
 import douglas from "../assets/douglas.webp";
 import ReactPlayer from 'react-player'
@@ -7,6 +7,11 @@ import ReactPlayer from 'react-player'
 export const Hero = () => {
 
   const [isWide] = useMediaQuery('(min-width: 1170px)');
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
     <Flex
@@ -14,13 +19,13 @@ export const Hero = () => {
       w={'100%'}
       position="relative"
     >
-      <Image
+      {/* <Image
         src={douglas.src}
         alt="Douglas Oldegardo"
         objectFit="cover"
         w="100%"
         h="100%"
-      />
+      /> */}
       {/* Componente Box para a sobreposição com fundo degradê */}
       <Box
         position="absolute"
@@ -29,7 +34,7 @@ export const Hero = () => {
         width="100%"
         height="100%"
         bgGradient="linear(to-b, #791714, #390002)"
-        opacity={0.5}
+        opacity={1}
       />
       <Flex
         w={'100%'}
@@ -49,10 +54,12 @@ export const Hero = () => {
           e fila de espera, agora tem a sua segunda edição, 2.0, com conteúdo amplamente
           ATUALIZADO, especialmente no âmbito da COMUNICAÇÃO NÃO VERBAL e no uso de recursos
           da NEUROCIÊNCIA jamais aplicados à dialética judiciária. Presencialmente em Campo Grande, MS
-          dias 15 e 16 de setembro.
+          dias 22 e 23 de setembro.
         </Text>
-        <Flex w={'90%'} justifyContent={'center'}>
-          <ReactPlayer url={'https://www.youtube.com/watch?v=7sDY4m8KNLc&t=149s'} />
+        <Flex w={'100%'} justifyContent={'center'}>
+          {isClient && (
+            <ReactPlayer url={'https://www.youtube.com/watch?v=7sDY4m8KNLc&t=149s'} />
+          )}
         </Flex>
         <Button size={'lg'}>Quero me inscrever</Button>
       </Flex>

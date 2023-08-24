@@ -6,34 +6,34 @@ import { motion } from 'framer-motion';
 
 export const Price = () => {
 
-  const [day, hour, minute, second] = useCountDownHook("Sep 15, 2023 00:00:00");
+  const [day, hour, minute, second] = useCountDownHook("Sep 22, 2023 00:00:00");
 
   const [isWide] = useMediaQuery('(min-width: 1170px)');
 
   const lotes = [
     {
       title: 'Lote 1',
-      date: '21/08 - 25/08',
+      date: '24/08 - 29/08',
       price: 'R$ 500,00'
     },
     {
       title: 'Lote 2',
-      date: '26/08 - 30/08',
+      date: '30/08 - 04/09',
       price: 'R$ 600,00'
     },
     {
       title: 'Lote 3',
-      date: '31/08 - 04/09',
+      date: '05/09 - 10/09',
       price: 'R$ 700,00'
     },
     {
       title: 'Lote 4',
-      date: '05/09 - 09/09',
+      date: '11/09 - 16/09',
       price: 'R$ 800,00'
     },
     {
       title: 'Lote 5',
-      date: '10/09 - 14/09',
+      date: '17/09 - 22/09',
       price: 'R$ 900,00'
     },
   ];

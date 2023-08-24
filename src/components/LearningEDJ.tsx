@@ -47,7 +47,7 @@ export const LearningEDJ = () => {
             <Text>
               <AccordionButton >
                 <Box as="span" flex='1' textAlign='left' color={'white'}>
-                  <span style={{ color: '#ED1D24', fontWeight: 'bold' }}>1º Encontro - 15/09</span> - Período noturno
+                  <span style={{ color: '#ED1D24', fontWeight: 'bold' }}>1º Encontro - 22/09</span> - Período noturno
                 </Box>
                 <AccordionIcon color={'white'} />
               </AccordionButton>
@@ -63,7 +63,7 @@ export const LearningEDJ = () => {
             <Text>
               <AccordionButton>
                 <Box as="span" flex='1' textAlign='left' color={'white'}>
-                  <span style={{ color: '#ED1D24', fontWeight: 'bold' }}>2º Encontro - 16/09</span> - Período matutino
+                  <span style={{ color: '#ED1D24', fontWeight: 'bold' }}>2º Encontro - 23/09</span> - Período matutino
                 </Box>
                 <AccordionIcon color={'white'} />
               </AccordionButton>
@@ -79,7 +79,7 @@ export const LearningEDJ = () => {
             <Text>
               <AccordionButton>
                 <Box as="span" flex='1' textAlign='left' color={'white'}>
-                  <span style={{ color: '#ED1D24', fontWeight: 'bold' }}>3º  Encontro - 16/09</span> - Período verpertino
+                  <span style={{ color: '#ED1D24', fontWeight: 'bold' }}>3º  Encontro - 23/09</span> - Período verpertino
                 </Box>
                 <AccordionIcon color={'white'} />
               </AccordionButton>

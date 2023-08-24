@@ -8,15 +8,19 @@ import { Price } from '../components/Price'
 import { About } from '../components/About'
 import { Footer } from '../components/Footer'
 import { Qualifications } from '../components/Qualifications'
+import { Information } from '../components/Information'
+import Starting from '../components/Starting'
 
 const Index = () => {
   return (
     <>
       <WhitePartLogo />
-      <Hero />
+      {/* <Hero /> */}
+      <Starting />
       <CountDown />
       <LearningEDJ />
-      <Info />
+      <Information />
+      {/* <Info /> */}
       <Testimony />
       <Price />
       <About />

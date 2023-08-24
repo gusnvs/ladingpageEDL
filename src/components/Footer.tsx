@@ -6,7 +6,7 @@ import logoDouglas from '../assets/logoDouglas.png'
 
 
 export const Footer = () => {
-  const [day, hour, minute, second] = useCountDownHook("Sep 15, 2023 00:00:00");
+  const [day, hour, minute, second] = useCountDownHook("Sep 22, 2023 00:00:00");
 
   const [isWide] = useMediaQuery('(min-width: 1170px)');
 
