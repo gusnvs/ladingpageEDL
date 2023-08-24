@@ -39,7 +39,7 @@ export const Starting = () => {
             </Text>
             <Flex w={'100%'} justifyContent={'center'}>
                 {isClient && (
-                    <ReactPlayer url={'https://www.youtube.com/watch?v=7sDY4m8KNLc&t=149s'} />
+                    <ReactPlayer url={'https://www.youtube.com/watch?v=wn5U72xXNaY'} />
                 )}
             </Flex>
             <Link href='https://pay.hotmart.com/B85498475I' target='_blank'>
