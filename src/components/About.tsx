@@ -1,6 +1,7 @@
 import { Flex, Heading, VStack, Text, Image, Box, useMediaQuery } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import douglas from '../assets/douglas.webp'
+import douglasCentralizado from '../assets/douglasCentralizado.png'
 import Head from 'next/head';
 
 
@@ -50,7 +51,7 @@ export const About = () => {
             </Flex>
             <Flex w={'100%'} justifyContent={'center'} position="relative">
                 <Image
-                    src={douglas.src}
+                    src={douglasCentralizado.src}
                     w={'500px'}
                     h={'600px'}
                     objectFit={'cover'}

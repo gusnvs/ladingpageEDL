@@ -8,6 +8,7 @@ import image3 from '../assets/image3.jpg'
 import image4 from '../assets/image4.jpg'
 import turma from '../assets/alunosEDJ1.jpeg'
 import { FaQuoteLeft } from 'react-icons/fa'
+import { Swiper, SwiperSlide } from "swiper/react"
 
 const image = [image1, image2, image3, image4]
 
@@ -71,10 +72,11 @@ export const Testimony = () => {
                         style={{
                             transform: hovered ? 'scale(1.05)' : 'scale(1)',
                             transition: 'transform 0.6s ease-in-out',
-                        }} />
+                        }}
+                    />
 
                     <Box w={'100%'} maxWidth={isWide ? '600px' : '500px'} >
-                        <motion.div whileTap={{ cursor: "grabbing" }} style={{
+                        {/* <motion.div whileTap={{ cursor: "grabbing" }} style={{
                             cursor: 'grab',
                             overflow: 'hidden'
                         }}>
@@ -87,13 +89,6 @@ export const Testimony = () => {
                                         minWidth: '400px',
                                         padding: '14px'
                                     }} key={depoiment.name}>
-                                        {/* <Image
-                                            borderRadius={'12px'}
-                                            pointerEvents={'none'}
-                                            width={'100%'} h={'90%'}
-                                            src={image.src}
-                                            alt="Imagens EDJ"
-                                        /> */}
                                         <Flex
                                             flexDir={'column'}
                                             alignItems={'flex-start'}
@@ -116,7 +111,35 @@ export const Testimony = () => {
                                     </motion.div>
                                 ))}
                             </motion.div>
-                        </motion.div>
+                        </motion.div> */}
+                        <Swiper pagination={{ clickable: true }} navigation >
+                            {depoiments.map(depoiment => (
+                                <SwiperSlide>
+                                    <Flex w={'100%'} justifyContent={'center'}>
+                                        <Flex
+                                            flexDir={'column'}
+                                            alignItems={'flex-start'}
+                                            justifyContent={'space-between'}
+                                            w={'80%'}
+                                            h={'100%'}
+                                            p={10}
+                                            borderRadius={'25px'}
+                                            bgColor={'gray.100'}
+                                            gap={10}>
+                                            <Box h={'170px'} overflowY={'auto'} >
+                                                <FaQuoteLeft color='#ED1D24' />
+                                                <Text as={'em'} >{depoiment.text}</Text>
+                                            </Box>
+                                            <Box>
+                                                <Text as={'cite'} fontSize={'sm'} color={'#ED1D24'}>{depoiment.position}</Text>
+                                                <Text fontWeight={'bold'}>Dr. {depoiment.name}</Text>
+                                            </Box>
+
+                                        </Flex>
+                                    </Flex>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
                     </Box>
                 </Flex>
                 <Text fontWeight={'medium'} textAlign={'center'}>

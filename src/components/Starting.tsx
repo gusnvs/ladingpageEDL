@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Flex, Heading, Text, VStack, Box, Image, useMediaQuery } from '@chakra-ui/react';
 import douglas from "../assets/douglas.webp";
+import douglasFundo2 from "../assets/douglas_fundo2.png"
 import ReactPlayer from 'react-player'
 
 
@@ -18,7 +19,7 @@ export const Starting = () => {
         <Flex
             w={'100%'}
             h={'auto'}
-            background={`url(${douglas.src}) no-repeat center center fixed`}
+            background={`url(${douglasFundo2.src}) no-repeat center center fixed`}
             // bgGradient="linear(to-b, #791714, #390002)"
             backgroundSize="cover" // Ajusta o dimensionamento da imagem
             alignItems={'center'}

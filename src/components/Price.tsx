@@ -3,6 +3,7 @@ import React from 'react'
 import { Counter } from './Counter';
 import useCountDownHook from '../hook/useCountDownHook';
 import { motion } from 'framer-motion';
+import { Swiper, SwiperSlide } from "swiper/react"
 
 export const Price = () => {
 
@@ -62,7 +63,7 @@ export const Price = () => {
           Como dizia Epicuro, <Text color={'#ED1D24'}>"Metade do sucesso vem do acaso. Metade do esforço pessoal."</Text> portanto, invista no seu conhecimento pessoal.
         </Heading>
         <Text textAlign={'center'} color={'white'}>O evento começa exatamente em:</Text>
-        <Flex flexDir={{ base: 'column', md: 'row', lg: 'row'}} gap={5}>
+        <Flex flexDir={{ base: 'column', md: 'row', lg: 'row' }} gap={5}>
           <Counter title="Dias" number={day} bg="white" colorLetter="#9B0A0F" />
           <Counter title="Horas" number={hour} bg="white" colorLetter="#9B0A0F" />
           <Counter title="Minutos" number={minute} bg="white" colorLetter="#9B0A0F" />
@@ -70,7 +71,7 @@ export const Price = () => {
         </Flex>
         <Text textAlign={'center'} color={'white'}>Confira os lotes e faça sua inscrição antecipada</Text>
         <Box w={'100%'} maxWidth={'900px'} >
-          <motion.div whileTap={{ cursor: "grabbing" }} style={{
+          {/* <motion.div whileTap={{ cursor: "grabbing" }} style={{
             cursor: 'grab',
             overflow: 'hidden'
           }}>
@@ -100,7 +101,30 @@ export const Price = () => {
                 </motion.div>
               ))}
             </motion.div>
-          </motion.div>
+          </motion.div> */}
+          <Swiper navigation >
+            {lotes.map(lote => (
+              <SwiperSlide>
+                <Flex w={'100%'} justifyContent={'center'}>
+                  <Flex
+                    w={'50%'}
+                    h={'100%'}
+                    bgColor={'white'}
+                    alignItems={'center'}
+                    justifyContent={'center'}
+                    borderRadius={'20px'}
+                    flexDir={'column'}
+                    gap={2}
+                    p={'15px'}>
+                    <Text fontWeight={'bold'} letterSpacing={1}>{lote.title}</Text>
+                    <Text fontWeight={'medium'} color={'#ED1D24'}>{lote.date}</Text>
+                    <Divider w={'70%'} border={'solid #CBD5E0 1px'} />
+                    <Text fontWeight={'bold'} fontSize={'xl'}>{lote.price}</Text>
+                  </Flex>
+                </Flex>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </Box>
         <Text color={'white'} w={'100%'} textAlign={'center'}>
           Alunos do Curso Online Oratória Jurídica 3.0 tem desconto de 45%. Façam contato

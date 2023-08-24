@@ -19,14 +19,6 @@ export const Hero = () => {
       w={'100%'}
       position="relative"
     >
-      {/* <Image
-        src={douglas.src}
-        alt="Douglas Oldegardo"
-        objectFit="cover"
-        w="100%"
-        h="100%"
-      /> */}
-      {/* Componente Box para a sobreposição com fundo degradê */}
       <Box
         position="absolute"
         top={0}
