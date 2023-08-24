@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Flex, Heading, Text, VStack, Box, Image, useMediaQuery } from '@chakra-ui/react';
 import douglas from "../assets/douglas.webp";
+import ReactPlayer from 'react-player'
 
 
 export const Hero = () => {
@@ -9,7 +10,7 @@ export const Hero = () => {
 
   return (
     <Flex
-      height="100vh"
+      h={'100vh'}
       w={'100%'}
       position="relative"
     >
@@ -32,6 +33,7 @@ export const Hero = () => {
       />
       <Flex
         w={'100%'}
+        h={'auto'}
         px={isWide ? 100 : 10}
         py={10}
         justifyContent="center"
@@ -40,7 +42,7 @@ export const Hero = () => {
         color={'white'}
         direction={'column'}
         gap={10}>
-      
+
         <Heading textAlign={isWide ? 'start' : 'center'} >A edificação do discurso jurídico 2.0</Heading>
         <Text fontSize={'md'} textAlign={'center'} >
           Já realizado em Campo Grande, com sucesso absoluto, esgotamento de vagas
@@ -49,6 +51,9 @@ export const Hero = () => {
           da NEUROCIÊNCIA jamais aplicados à dialética judiciária. Presencialmente em Campo Grande, MS
           dias 15 e 16 de setembro.
         </Text>
+        <Flex w={'90%'} justifyContent={'center'}>
+          <ReactPlayer url={'https://www.youtube.com/watch?v=7sDY4m8KNLc&t=149s'} />
+        </Flex>
         <Button size={'lg'}>Quero me inscrever</Button>
       </Flex>
     </Flex>

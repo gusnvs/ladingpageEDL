@@ -19,6 +19,8 @@ export const Info = () => {
         setHoveredIndex(null);
     };
 
+    
+
 
     const items = [
         {
@@ -57,6 +59,7 @@ export const Info = () => {
                         typeSpeed={70}
                         deleteSpeed={50}
                         delaySpeed={1000} />
+                        <span id="typewriter-container" />
                 </Heading>
                 para quem ...
             </Heading>

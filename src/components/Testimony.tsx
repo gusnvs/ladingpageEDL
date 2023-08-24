@@ -6,12 +6,44 @@ import image1 from '../assets/image1.jpg'
 import image2 from '../assets/image2.jpg'
 import image3 from '../assets/image3.jpg'
 import image4 from '../assets/image4.jpg'
+import turma from '../assets/alunosEDJ1.jpeg'
+import { FaQuoteLeft } from 'react-icons/fa'
 
 const image = [image1, image2, image3, image4]
 
 export const Testimony = () => {
 
     const [isWide] = useMediaQuery('(min-width: 1170px)');
+
+    const [hovered, setHovered] = useState(false);
+
+    const handleMouseEnter = () => {
+        setHovered(true)
+    }
+
+    const handleMouseLeave = () => {
+        setHovered(false)
+    }
+
+    const depoiments = [
+        {
+            name: 'Renata Ruth Fernandes Goya Marinho',
+            position: 'Promotora de Justiça',
+            text: 'Vivi momentos importantes de reflexão. O curso é farol e aponta questões necessárias para uma verdadeira evolução!'
+        },
+        {
+            name: 'Arthur Vasques',
+            position: 'Advogado e Professor Universitário',
+            text: 'A oratória é atributo distintivo do profissional das carreiras jurídicas. Procurar o aprimoramento é a postura que se espera de nós e, para aperfeiçoar meu desempenho na advocacia e no magistério superior, busquei o curso do professor Douglas.'
+
+
+        },
+        {
+            name: 'André Matsushita Gonçalves',
+            position: 'Presidente da ADEPOL/MS',
+            text: 'Um curso essencial para o domínio e aprimoramento da capacidade de falar em público, quer seja em entrevistas, quer seja ministrando aulas e palestras, quer seja sustentando ideias em debates orais ou qualquer outra atividade que exija a comunicação verbal coletiva. Abrange técnicas e princípios de linguagem corporal, dicção, entonação de voz, uso de retóricas, concatenação de argumentos em linha temporal e lógica, sempre visando a perfeita compreensão ou convencimento por parte do interlocutor. Recomendo para todas as pessoas que buscam um melhor desenvolvimento da capacidade de comunicação, tanto no aspecto profissional como também no pessoal.'
+        }
+    ]
 
 
     return (
@@ -29,23 +61,58 @@ export const Testimony = () => {
                     anterior?
                 </Heading>
                 <Flex flexDir={isWide ? 'row' : 'column'} w={'100%'} alignItems={'center'} justifyContent={'center'} gap={10}>
-                    <Image src={celular.src} w='30%' alt="Turma EDL" />
+                    <Image
+                        src={turma.src}
+                        w='500px'
+                        alt="Turma EDL"
+                        borderRadius={'25px'}
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                        style={{
+                            transform: hovered ? 'scale(1.05)' : 'scale(1)',
+                            transition: 'transform 0.6s ease-in-out',
+                        }} />
 
                     <Box w={'100%'} maxWidth={isWide ? '600px' : '500px'} >
                         <motion.div whileTap={{ cursor: "grabbing" }} style={{
                             cursor: 'grab',
                             overflow: 'hidden'
                         }}>
-                            <motion.div drag="x" dragConstraints={{ right: 0, left: -1000 }} style={{
+                            <motion.div drag="x" dragConstraints={{ right: 0, left: -800 }} style={{
                                 display: 'flex',
                             }}>
-                                {image.map(image => (
+                                {depoiments.map(depoiment => (
                                     <motion.div style={{
                                         minHeight: '200px',
                                         minWidth: '400px',
                                         padding: '14px'
-                                    }} key={image.src}>
-                                        <Image borderRadius={'12px'} pointerEvents={'none'} width={'100%'} h={'90%'} src={image.src} alt="Imagens EDJ" />
+                                    }} key={depoiment.name}>
+                                        {/* <Image
+                                            borderRadius={'12px'}
+                                            pointerEvents={'none'}
+                                            width={'100%'} h={'90%'}
+                                            src={image.src}
+                                            alt="Imagens EDJ"
+                                        /> */}
+                                        <Flex
+                                            flexDir={'column'}
+                                            alignItems={'flex-start'}
+                                            justifyContent={'space-between'}
+                                            w={'100%'}
+                                            h={'100%'}
+                                            p={10}
+                                            borderRadius={'25px'}
+                                            bgColor={'gray.100'}>
+                                            <Box h={'150px'} overflowY={'auto'}>
+                                                <FaQuoteLeft color='#ED1D24' />
+                                                <Text as={'em'} >{depoiment.text}</Text>
+                                            </Box>
+                                            <Box>
+                                                <Text as={'cite'} fontSize={'sm'} color={'#ED1D24'}>{depoiment.position}</Text>
+                                                <Text fontWeight={'bold'}>Dr. {depoiment.name}</Text>
+                                            </Box>
+
+                                        </Flex>
                                     </motion.div>
                                 ))}
                             </motion.div>
