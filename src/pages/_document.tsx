@@ -1,18 +1,24 @@
-import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
-import { ColorModeScript } from '@chakra-ui/react'
+// pages/_document.tsx
 
-export default class Document extends NextDocument {
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+
+class MyDocument extends Document {
   render() {
     return (
-      <Html>
-        <Head />
+      <Html lang="en">
+        <Head>
+          <link
+            href="https://db.onlinewebfonts.com/c/07cb29fdcb073fff840edc6de2067b50?family=Amsterdam+Four_ttf"
+            rel="stylesheet"
+          />
+        </Head>
         <body>
-          {/* Make Color mode to persists when you refresh the page. */}
-          <ColorModeScript />
           <Main />
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
+
+export default MyDocument;

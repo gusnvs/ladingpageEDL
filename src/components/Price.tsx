@@ -103,8 +103,8 @@ export const Price = () => {
             </motion.div>
           </motion.div> */}
           <Swiper navigation >
-            {lotes.map(lote => (
-              <SwiperSlide>
+            {lotes.map((lote, index) => (
+              <SwiperSlide key={index}>
                 <Flex w={'100%'} justifyContent={'center'}>
                   <Flex
                     w={'50%'}
@@ -133,7 +133,9 @@ export const Price = () => {
         <Heading color={'white'} textAlign={'center'} fontSize={'md'} >
           Curso com vagas <Text color={'#ED1D24'} display={'inline'}>ALTAMENTE RESTRITAS!</Text> Garanta logo a sua!
         </Heading>
-        <Button size={'lg'}>Quero me inscrever</Button>
+        <Link href='https://pay.hotmart.com/B85498475I' target='_blank'>
+          <Button size={'lg'}>Quero me inscrever</Button>
+        </Link>
       </Flex>
 
     </Flex>

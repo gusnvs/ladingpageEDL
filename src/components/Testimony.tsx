@@ -113,8 +113,8 @@ export const Testimony = () => {
                             </motion.div>
                         </motion.div> */}
                         <Swiper pagination={{ clickable: true }} navigation >
-                            {depoiments.map(depoiment => (
-                                <SwiperSlide>
+                            {depoiments.map((depoiment, index) => (
+                                <SwiperSlide key={index}>
                                     <Flex w={'100%'} justifyContent={'center'}>
                                         <Flex
                                             flexDir={'column'}

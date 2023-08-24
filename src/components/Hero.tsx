@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Flex, Heading, Text, VStack, Box, Image, useMediaQuery } from '@chakra-ui/react';
+import { Button, Flex, Heading, Text, VStack, Box, Image, useMediaQuery, Link} from '@chakra-ui/react';
 import douglas from "../assets/douglas.webp";
 import ReactPlayer from 'react-player'
 
@@ -53,7 +53,7 @@ export const Hero = () => {
             <ReactPlayer url={'https://www.youtube.com/watch?v=7sDY4m8KNLc&t=149s'} />
           )}
         </Flex>
-        <Button size={'lg'}>Quero me inscrever</Button>
+        <Button size={'lg'}>Quero me inscreverrrrr</Button>
       </Flex>
     </Flex>
   )

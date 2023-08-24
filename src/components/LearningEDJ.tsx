@@ -11,7 +11,8 @@ import {
   AccordionIcon,
   Box,
   Button,
-  useMediaQuery
+  useMediaQuery,
+  Link
 } from '@chakra-ui/react'
 
 export const LearningEDJ = () => {
@@ -27,19 +28,21 @@ export const LearningEDJ = () => {
       alignItems={'center'}
       flexDir={isWide ? 'row' : 'column'}
       gap={10}
-      justifyContent={isWide? 'center' : 'space-between'}
+      justifyContent={isWide ? 'center' : 'space-between'}
       px={isWide ? 100 : 10}
       py={10}>
-      <VStack w={'100%'} display={'flex'} alignItems={isWide? 'flex-start': 'center'} gap={10}>
-        <Flex alignItems={isWide? 'flex-start' : 'center'} flexDir={'column'}>
-          <Heading textAlign={isWide? 'start' : 'center'} mb={2} color={'white'}>O que você vai aprender no <Text color={'#ED1D24'}>EDJ 2.0?</Text></Heading>
-          <Text textAlign={isWide? 'start' : 'center'} color={'white'} w='80%'>
+      <VStack w={'100%'} display={'flex'} alignItems={isWide ? 'flex-start' : 'center'} gap={10}>
+        <Flex alignItems={isWide ? 'flex-start' : 'center'} flexDir={'column'}>
+          <Heading textAlign={isWide ? 'start' : 'center'} mb={2} color={'white'}>O que você vai aprender no <Text color={'#ED1D24'}>EDJ 2.0?</Text></Heading>
+          <Text textAlign={isWide ? 'start' : 'center'} color={'white'} w='80%'>
             No final do curso você sairá preparado para aplicar as técnicas
             e conhecimentos imediatamente, sem nenhuma dificuldade,
             percebendo já nas primeiras oportunidades a evolução no desempenho da sua oratória
           </Text>
         </Flex>
-        <Button variant={'primary'}>Quero me inscrever</Button>
+        <Link href='https://pay.hotmart.com/B85498475I' target='_blank'>
+          <Button size={'lg'}>Quero me inscrever</Button>
+        </Link>
       </VStack>
       <Box w={'100%'} >
         <Accordion >

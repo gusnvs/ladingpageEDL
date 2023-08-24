@@ -2,7 +2,6 @@ import { ChakraProvider } from '@chakra-ui/react'
 
 import theme from '../theme'
 import { AppProps } from 'next/app'
-
 import { register } from "swiper/element/bundle"
 import 'swiper/css';
 import 'swiper/css/navigation';

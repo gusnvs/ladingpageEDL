@@ -31,12 +31,6 @@ export const About = () => {
             alignItems={'center'}
             justifyContent={isWide? 'center' : 'space-between'}
             flexDir={isWide? 'row' : 'column'}>
-            <Head>
-                <link
-                    href="https://db.onlinewebfonts.com/c/07cb29fdcb073fff840edc6de2067b50?family=Amsterdam+Four_ttf"
-                    rel="stylesheet"
-                />
-            </Head>
             <Flex gap={10} flexDir={'column'} alignItems={isWide? 'flex-start' : 'center'} w={'100%'} >
                 <Heading textAlign={isWide ? 'start' : 'center'} color={'white'}>Conheça o seu mentor:</Heading>
                 <Text fontWeight={'bold'} fontSize={'xl'} color={'#ED1D24'}>Douglas Oldegardo,</Text>
