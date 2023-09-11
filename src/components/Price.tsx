@@ -4,6 +4,7 @@ import { Counter } from './Counter';
 import useCountDownHook from '../hook/useCountDownHook';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from "swiper/react"
+import { Code } from '@chakra-ui/react'
 
 export const Price = () => {
 
@@ -126,6 +127,7 @@ export const Price = () => {
             ))}
           </Swiper>
         </Box>
+        <Code colorScheme='red' children="Parcelável em até 7 vezes!" />
         <Text color={'white'} w={'100%'} textAlign={'center'}>
           Alunos do Curso Online Oratória Jurídica 3.0 tem desconto de 45%. Façam contato
           inbox pelo perfil Instagram <Link href='https://www.instagram.com/direct/t/112073226852259'><Badge colorScheme='red'>@oldegardo</Badge></Link> para obter o seu cupom.

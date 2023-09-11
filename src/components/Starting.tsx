@@ -32,7 +32,7 @@ export const Starting = () => {
             <Heading textAlign={isWide ? 'start' : 'center'} >A edificação do discurso jurídico 2.0</Heading>
             <Text fontSize={'md'} textAlign={'center'} >
                 Já realizado em Campo Grande, com sucesso absoluto, esgotamento de vagas
-                e fila de espera, agora tem a sua segunda edição, 2.0, com conteúdo amplamente
+                e fila de espera, o Workshop 'A Edificação do Discurso Jurídico' tem agora a sua segunda edição 2.0, com conteúdo amplamente
                 ATUALIZADO, especialmente no âmbito da COMUNICAÇÃO NÃO VERBAL e no uso de recursos
                 da NEUROCIÊNCIA jamais aplicados à dialética judiciária. Presencialmente em Campo Grande, MS
                 dias 22 e 23 de setembro.
