@@ -26,10 +26,10 @@ export const CountDown = () => {
                 e essa oportunidade única se <strong>encerra em:</strong>
             </Text>
             <Flex flexDir={{ base: 'column', md: 'row', lg: 'row'}} gap={5}>
-                <Counter title="Dias" number={day} bg="white" colorLetter="#9B0A0F" />
-                <Counter title="Horas" number={hour} bg="white" colorLetter="#9B0A0F" />
-                <Counter title="Minutos" number={minute} bg="white" colorLetter="#9B0A0F" />
-                <Counter title="Segundos" number={second} bg="white" colorLetter="#9B0A0F" />
+                <Counter title="Dias" number={0} bg="white" colorLetter="#9B0A0F" />
+                <Counter title="Horas" number={0} bg="white" colorLetter="#9B0A0F" />
+                <Counter title="Minutos" number={0} bg="white" colorLetter="#9B0A0F" />
+                <Counter title="Segundos" number={0} bg="white" colorLetter="#9B0A0F" />
             </Flex>
         </Flex>
     )
