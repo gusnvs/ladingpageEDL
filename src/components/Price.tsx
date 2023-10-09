@@ -8,7 +8,7 @@ import { Code } from '@chakra-ui/react'
 
 export const Price = () => {
 
-  const [day, hour, minute, second] = useCountDownHook("Sep 22, 2023 00:00:00");
+  const [day, hour, minute, second] = useCountDownHook("Nov 24, 2023 00:00:00");
 
   const [isWide] = useMediaQuery('(min-width: 1170px)');
 
