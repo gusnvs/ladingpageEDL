@@ -35,7 +35,7 @@ export const Starting = () => {
                 e fila de espera, o Workshop 'A Edificação do Discurso Jurídico' tem agora a sua segunda edição 2.0, com conteúdo amplamente
                 ATUALIZADO, especialmente no âmbito da COMUNICAÇÃO NÃO VERBAL e no uso de recursos
                 da NEUROCIÊNCIA jamais aplicados à dialética judiciária. Presencialmente em Campo Grande, MS
-                dias 22 e 23 de setembro.
+                dias 24 e 25 de novembro.
             </Text>
             <Flex w={'100%'} justifyContent={'center'}>
                 {isClient && (

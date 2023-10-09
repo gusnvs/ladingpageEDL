@@ -5,7 +5,7 @@ import useCountDownHook from '../hook/useCountDownHook'
 
 export const CountDown = () => {
 
-    const [day, hour, minute, second] = useCountDownHook("Nov 24, 2023 00:00:00");
+    const [day, hour, minute, second] = useCountDownHook("Nov 24, 2023 19:00:00");
 
     const [isWide] = useMediaQuery('(min-width: 1170px)');
 

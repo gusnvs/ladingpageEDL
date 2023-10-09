@@ -8,35 +8,35 @@ import { Code } from '@chakra-ui/react'
 
 export const Price = () => {
 
-  const [day, hour, minute, second] = useCountDownHook("Nov 24, 2023 00:00:00");
+  const [day, hour, minute, second] = useCountDownHook("Nov 24, 2023 19:00:00");
 
   const [isWide] = useMediaQuery('(min-width: 1170px)');
 
   const lotes = [
     {
       title: 'Lote 1',
-      date: '24/08 - 29/08',
-      price: 'R$ 500,00'
-    },
-    {
-      title: 'Lote 2',
-      date: '30/08 - 04/09',
+      date: '09/10 - 29/10',
       price: 'R$ 600,00'
     },
     {
+      title: 'Lote 2',
+      date: '30/10 - 05/11',
+      price: 'R$ 650,00'
+    },
+    {
       title: 'Lote 3',
-      date: '05/09 - 10/09',
+      date: '06/11 - 12/11',
       price: 'R$ 700,00'
     },
     {
       title: 'Lote 4',
-      date: '11/09 - 16/09',
-      price: 'R$ 800,00'
+      date: '13/11 - 19/11',
+      price: 'R$ 750,00'
     },
     {
       title: 'Lote 5',
-      date: '17/09 - 22/09',
-      price: 'R$ 900,00'
+      date: '20/11 - 23/11',
+      price: 'R$ 800,00'
     },
   ];
 
