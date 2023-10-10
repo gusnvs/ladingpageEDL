@@ -40,7 +40,7 @@ export const LearningEDJ = () => {
             percebendo já nas primeiras oportunidades a evolução no desempenho da sua oratória
           </Text>
         </Flex>
-        <Link href='https://pay.hotmart.com/B85498475I' target='_blank'>
+        <Link href='https://go.hotmart.com/Q87435750Y' target='_blank'>
           <Button size={'lg'}>Quero me inscrever</Button>
         </Link>
       </VStack>

@@ -135,7 +135,7 @@ export const Price = () => {
         <Heading color={'white'} textAlign={'center'} fontSize={'md'} >
           Curso com vagas <Text color={'#ED1D24'} display={'inline'}>ALTAMENTE RESTRITAS!</Text> Garanta logo a sua!
         </Heading>
-        <Link href='https://pay.hotmart.com/B85498475I' target='_blank'>
+        <Link href='https://go.hotmart.com/Q87435750Y' target='_blank'>
           <Button size={'lg'}>Quero me inscrever</Button>
         </Link>
       </Flex>
